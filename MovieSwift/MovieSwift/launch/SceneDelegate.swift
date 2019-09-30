@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     var archiveTimer: Timer?
-
+    //入口
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
@@ -36,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 NSAttributedString.Key.foregroundColor: UIColor(named: "steam_gold")!,
                 NSAttributedString.Key.font: UIFont(name: "FjallaOne-Regular", size: 16)!],
                                                                 for: .normal)
-            
+            //主持
             let controller = UIHostingController(rootView:
                 StoreProvider(store: store) {
                     HomeView()
@@ -59,7 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 
-
+//全局状态
 let store = Store<AppState>(reducer: appStateReducer,
                             middleware: [loggingMiddleware],
                             state: AppState())

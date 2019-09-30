@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUIFlux
-
+//打印
 let loggingMiddleware: Middleware<AppState> = { dispatch, getState in
     return { next in
         return { action in

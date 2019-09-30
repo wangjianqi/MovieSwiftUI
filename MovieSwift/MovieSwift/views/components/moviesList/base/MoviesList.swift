@@ -100,7 +100,8 @@ struct MoviesList: ConnectedView {
             }
         }
     }
-        
+
+    //搜索框
     private var searchField: some View {
         SearchField(searchTextWrapper: searchTextWrapper,
                     placeholder: "Search any movies or person",
@@ -119,6 +120,7 @@ struct MoviesList: ConnectedView {
     
     // MARK: - Body
     func body(props: Props) -> some View {
+        //列表
         List {
             if displaySearch {
                 Section {

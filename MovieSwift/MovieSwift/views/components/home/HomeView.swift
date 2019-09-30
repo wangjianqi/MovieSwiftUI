@@ -24,6 +24,7 @@ struct HomeView: View {
 
 // MARK: - iOS implementation
 struct TabbarView: View {
+    //默认选中
     @State var selectedTab = Tab.movies
     
     enum Tab: Int {
@@ -32,6 +33,7 @@ struct TabbarView: View {
     
     func tabbarItem(text: String, image: String) -> some View {
         VStack {
+            //加载图片
             Image(systemName: image)
                 .imageScale(.large)
             Text(text)
@@ -39,7 +41,9 @@ struct TabbarView: View {
     }
     
     var body: some View {
+        //选中
         TabView(selection: $selectedTab) {
+            //首页
             MoviesHome().tabItem{
                 self.tabbarItem(text: "Movies", image: "film")
             }.tag(Tab.movies)
@@ -52,8 +56,8 @@ struct TabbarView: View {
             MyLists().tabItem{
                 self.tabbarItem(text: "My Lists", image: "heart.circle")
             }.tag(Tab.myLists)
-            }
-            .edgesIgnoringSafeArea(.top)
+        }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
